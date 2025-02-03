@@ -15,5 +15,13 @@ RSpec.describe StringCalculator do
   it "returns the sum of two numbers" do
     expect(calculator.add("1,5")).to eq(6)
   end
+
+  it "returns the sum of multiple numbers" do
+    expect(calculator.add("100,201.10,301.23")).to eq(602)
+  end
+
+  it "handles new lines between numbers" do
+    expect(calculator.add("1\n2,3")).to eq(6)
+  end
 end
 
